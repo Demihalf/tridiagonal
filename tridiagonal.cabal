@@ -15,4 +15,5 @@ cabal-version:       >=1.8
 executable tridiagonal
   main-is:           Tridiagonal.hs
   other-modules:     TridiagonalList, TridiagonalArray
-  build-depends:       base ==4.6.*, array ==0.4.*, bytestring ==0.10.*, bytestring-lexing ==0.4.*
+  build-depends:     base ==4.6.*, array ==0.4.*, bytestring ==0.10.*, bytestring-lexing ==0.4.*
+  ghc-options:       -with-rtsopts=-K100M -O3
