@@ -46,5 +46,7 @@ main = do
     [f] <- getArgs
     [a,b,c,d,x] <- fileArgsAns f
     let eqd = eqData a b c d
-
-    print $ liftM2 dist (return x) (getSolution eqd)
+    let norm = liftM2 dist (return x) (getSolution eqd)
+    case norm of
+        Nothing -> putStrLn "Не удалось найти решение"
+        Just x -> printf "Полученное решение отличается от точного на %f" x
