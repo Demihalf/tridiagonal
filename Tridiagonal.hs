@@ -27,7 +27,7 @@ nextVector handle = liftM readDoubleList (B.hGetLine handle)
 
 -- | Извлекает n векторов вещественных чисел из файла с именем f
 fileReadDoubleLists :: Int -> String -> IO [[Double]]
-fileReadDoubleLists n f = withFile f ReadMode $ ((replicateM n) . nextVector)
+fileReadDoubleLists n f = withFile f ReadMode $ replicateM n . nextVector
 
 -- | Извлекает 5 первых векторов из файла (a, b, c, d, x)
 fileArgsAns :: String -> IO [[Double]]

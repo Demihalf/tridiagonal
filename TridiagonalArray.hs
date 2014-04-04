@@ -48,5 +48,5 @@ getSolution eqdata = if hasSolution then Just (elems xs) else Nothing
         hasSolution = not (any (\x -> isNaN x || isInfinite x) $ elems ls)
         xs = array (1, n) (
                (n, ms!(n+1)) : 
-               [(i-1, (ms!i - ls!i * xs!i)) | i <- reverse [2..n]]
+               [(i-1, ms!i - ls!i * xs!i) | i <- reverse [2..n]]
              )
