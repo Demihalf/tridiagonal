@@ -10,7 +10,7 @@ import Control.Monad
 import qualified Data.ByteString.Char8 as B
 import qualified Data.ByteString.Lex.Double as B
 
-import TridiagonalList
+import TDMA
 
 -- | Считывает Double из строки
 readD :: B.ByteString -> Double

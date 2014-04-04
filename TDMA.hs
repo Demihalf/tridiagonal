@@ -1,7 +1,7 @@
 {-# LANGUAGE BangPatterns #-}
 
 -- Версия на основе списков
-module TridiagonalList (
+module TDMA (
       eqData
     , getSolution
     ) where
