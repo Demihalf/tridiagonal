@@ -6,6 +6,7 @@ import Data.Char
 import Data.Maybe
 
 import Control.Monad
+import Text.Printf
 
 import qualified Data.ByteString.Char8 as B
 import qualified Data.ByteString.Lex.Double as B
@@ -49,4 +50,4 @@ main = do
     let norm = liftM2 dist (return x) (getSolution eqd)
     case norm of
         Nothing -> putStrLn "Не удалось найти решение"
-        Just x -> printf "Полученное решение отличается от точного на %f" x
+        Just x -> printf "Полученное решение отличается от точного на %f\n" x
