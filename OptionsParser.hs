@@ -49,7 +49,7 @@ options =
      "показать справочное сообщение"
  ]
 
-programOpts :: [String] -> IO (Options)
+programOpts :: [String] -> IO Options
 programOpts argv = case getOpt Permute options argv of
                      (o, _, []  ) -> return $ foldl (flip id) defaultOptions o
                      (_, _, errs) -> ioError (userError (concat errs ++ usageInfo header options))

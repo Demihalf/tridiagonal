@@ -14,6 +14,7 @@ import qualified Data.ByteString.Lex.Double as B
 
 import Equation
 import qualified TDMA
+import qualified Unstable
 import OptionsParser
 
 -- | Считывает Double из строки
@@ -80,7 +81,7 @@ dist a b = foldl1' max $ map abs $ zipWith (-) a b
 
 solveEquation :: Method -> EquationData Double -> Maybe (EquationSolution Double)
 solveEquation MethodTDMA     = TDMA.getSolution
-solveEquation MethodUnstable = undefined
+solveEquation MethodUnstable = Unstable.getSolution
 
 main :: IO ()
 main = do opts <- getArgs >>= programOpts
@@ -91,5 +92,5 @@ main = do opts <- getArgs >>= programOpts
 
           let sol = solveEquation (optMethod opts) eqd
           printSolution sol
-          testingMode (optTesting opts && (isNothing $ optRandom opts)) sol
+          testingMode (optTesting opts && isNothing (optRandom opts)) sol
 
