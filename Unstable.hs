@@ -2,8 +2,6 @@
 
 module Unstable 
  ( getSolution
- , getY
- , getZ
  ) where
 
 import Data.List
